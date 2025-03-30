@@ -1,0 +1,25 @@
+package provaQ3;
+import java_cup.runtime.*;
+import java.util.*;
+import java.io.*;
+
+terminal PTVG, MULT, ADD, DIV;
+terminal Integer NUMERO;
+
+non terminal Integer expr, expr_ptvg;
+
+expr_ptvg ::= expr:e PTVG {: System.out.println("Resultado: " + e); :};
+
+expr ::= expr:e MULT NUMERO:n
+{:
+  RESULT = new Integer(e.intValue() * n.intValue());
+:} | expr:e DIV NUMERO:n
+{:
+  RESULT = new Integer(e.intValue() / n.intValue());  
+:} | expr:e ADD NUMERO:n
+{:
+  RESULT = new Integer(e.intValue() +  n.intValue());
+:} | NUMERO:n
+{:
+  RESULT = n;
+:};

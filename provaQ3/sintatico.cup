@@ -1,0 +1,11 @@
+package provaQ3;
+import java_cup.runtime.*;
+import java.util.*;
+import java.io.*;
+
+terminal PTVG, ADD, DIV, MULT, NUMERO;
+
+non terminal expr, expr_ptvg;
+
+expr_ptvg ::= expr PTVG;
+expr ::= NUMERO | expr ADD NUMERO | expr MULT NUMERO | expr DIV NUMERO;

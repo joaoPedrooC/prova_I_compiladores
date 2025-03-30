@@ -1,0 +1,9 @@
+programa
+inicio
+  int idade;
+  idade = 0;
+  float valorsalario;
+  valorsalario = 100;
+  if(valorsalario > 50)
+    valorsalario = ValorSalario * 2;
+fim
